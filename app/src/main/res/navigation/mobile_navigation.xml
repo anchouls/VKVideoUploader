@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_uploaded">
+
+    <fragment
+        android:id="@+id/navigation_uploaded"
+        android:name="com.example.vkvideouploader.ui.uploaded.UploadedFragment"
+        android:label="@string/title_uploaded"
+        tools:layout="@layout/fragment_uploaded" />
+
+    <fragment
+        android:id="@+id/navigation_loading"
+        android:name="com.example.vkvideouploader.ui.loading.LoadingFragment"
+        android:label="@string/title_loading"
+        tools:layout="@layout/fragment_loading" />
+</navigation>

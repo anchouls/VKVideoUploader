@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">VK Video Uploader</string>
+    <string name="title_uploaded">Uploaded</string>
+    <string name="title_loading">Loading</string>
+    <integer name="com_vk_sdk_AppId">7868626</integer>
+    <string name="login">Войти</string>
+    <string name="button_loading_text">Upload a video</string>
+    <string name="button_save">Save</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="add_video">Add video</string>
+    <string name="pause">PAUSE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="foreground_upload">foreground upload</string>
+    <string name="background_upload">background upload</string>
+</resources>

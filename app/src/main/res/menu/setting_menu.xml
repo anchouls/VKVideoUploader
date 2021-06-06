@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/foreground"
+            android:title="@string/foreground_upload" />
+        <item android:id="@+id/background"
+            android:title="@string/background_upload"
+            android:checked="true"/>
+    </group>
+
+</menu>
