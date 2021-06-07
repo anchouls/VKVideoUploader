@@ -119,6 +119,11 @@ public class UploadService extends Service {
                     }
 
                     @Override
+                    public boolean isOneShot() {
+                        return true;
+                    }
+
+                    @Override
                     public long contentLength() {
                         return finalBytesRead;
                     }
@@ -130,14 +135,14 @@ public class UploadService extends Service {
                 };
 
                 RequestBody requestBody1 = new MultipartBody.Builder()
-                        .setType(MultipartBody.FORM)
                         .addFormDataPart("video_file", "video", requestBody)
                         .build();
 
                 Request request = new Request.Builder()
                         .url(url)
-                        .addHeader("Content-Range", "bytes " + currentLength + "-" + (currentLength + bytesRead - 1) + '/' + size)
                         .addHeader("Session-Id", UUID.randomUUID().toString())
+                        .addHeader("Accept-Ranges", "bytes")
+                        .addHeader("Content-Range", "bytes " + currentLength + "-" + (currentLength + bytesRead - 1) + '/' + size)
                         .post(requestBody1)
                         .build();
 
@@ -148,9 +153,6 @@ public class UploadService extends Service {
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
                         Log.d("onfailure video", e.getMessage());
-                        Intent intent = new Intent(LoadingFragment.BROADCAST_ACTION)
-                                .putExtra(ONFAILURE, true);
-                        sendBroadcast(intent);
                     }
 
                     @Override
